@@ -1,5 +1,5 @@
 const todoList = require("../todo");
-const { all, add, markAsComplete, overdue, dueToday, dueLater } = todoList();
+const { all, add, markAsComplete, overdue_sai, dueToday_sai, dueLater_sai } = todoList();
 
 describe("Todo List Test suite", () => {
   beforeAll(() => {
@@ -33,11 +33,11 @@ describe("Todo List Test suite", () => {
       ).toLocaleDateString("en-CA"),
       completed: false,
     });
-    expect(overdue().length).toBe(1);
+    expect(overdue_sai().length).toBe(1);
   });
 
   test("Due Today Items", () => {
-    expect(dueToday().length).toBe(2);
+    expect(dueToday_sai().length).toBe(2);
   });
 
   test("Due later Items", () => {
@@ -48,6 +48,6 @@ describe("Todo List Test suite", () => {
       ).toLocaleDateString("en-CA"),
       completed: false,
     });
-    expect(dueLater().length).toBe(1);
+    expect(dueLater_sai().length).toBe(1);
   });
 });
